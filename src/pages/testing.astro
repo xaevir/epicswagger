@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Pro | Premium Training</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+      .gradient-text {
+        background: linear-gradient(45deg, #61d6ff 0%, #00b8a9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .scroll-color-shift {
+        transition: color 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0D0D0D] text-gray-100" x-data="{ isOpen: false }">
+    <!-- Navbar -->
+    <nav class="fixed z-50 w-full bg-[#001F3F]">
+      <div
+        class="container mx-auto flex items-center justify-between px-6 py-4"
+      >
+        <div class="gradient-text text-2xl font-bold">FITPRO</div>
+        <div class="hidden space-x-8 md:flex">
+          <a href="#" class="transition hover:text-[#61D6FF]">Programs</a>
+          <a href="#" class="transition hover:text-[#61D6FF]">Results</a>
+          <a href="#" class="transition hover:text-[#FF6200]">Pricing</a>
+        </div>
+        <button @click="isOpen = !isOpen" class="md:hidden">
+          <!-- Mobile menu icon -->
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-b from-[#001F3F] to-[#0D0D0D] px-6 pt-32 pb-20"
+    >
+      <div class="container mx-auto text-center">
+        <h1 class="gradient-text mb-8 text-5xl font-extrabold md:text-6xl">
+          Transform Your Body in 12 Weeks
+        </h1>
+        <p class="mx-auto mb-12 max-w-2xl text-xl text-gray-400">
+          Professional training <span class="text-[#61D6FF]"
+            >accessible to everyone</span
+          > - achieve <span class="text-[#FF6200]">real results</span> without the
+          luxury price tag
+        </p>
+        <div class="flex flex-col justify-center gap-6 md:flex-row">
+          <button
+            class="rounded-full bg-gradient-to-r from-[#61D6FF] to-[#00B8A9] px-8 py-4 font-bold text-[#001F3F] transition-transform hover:scale-105"
+          >
+            Start Free Trial
+          </button>
+          <button
+            class="rounded-full border-2 border-[#FF6200] px-8 py-4 text-[#FF6200] transition hover:bg-[#FF6200]/10"
+          >
+            View Programs
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="bg-[#F6F6F6] py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="mb-12 text-center text-3xl font-bold text-[#001F3F]">
+          Real Transformations
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          <!-- Before Card -->
+          <div class="group relative">
+            <div
+              class="h-96 transform rounded-xl bg-gray-300 transition group-hover:scale-105"
+            >
+              <div
+                class="absolute right-0 bottom-0 left-0 bg-[#001F3F]/80 p-6 text-white"
+              >
+                <h3 class="text-xl font-bold text-[#61D6FF]">Before</h3>
+                <p class="text-gray-300">Week 0 Status</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- After Card -->
+          <div class="group relative">
+            <div
+              class="h-96 transform rounded-xl bg-gray-400 transition group-hover:scale-105"
+            >
+              <div
+                class="absolute right-0 bottom-0 left-0 bg-[#001F3F]/80 p-6 text-white"
+              >
+                <h3 class="text-xl font-bold text-[#FF6200]">After</h3>
+                <p class="text-gray-300">Week 12 Results</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="bg-[#0D0D0D] py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="gradient-text mb-16 text-center text-4xl font-bold">
+          Simple Pricing
+        </h2>
+        <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+          <div class="rounded-xl border border-[#61D6FF]/20 bg-[#001F3F] p-8">
+            <h3 class="mb-4 text-2xl font-bold text-[#61D6FF]">Starter</h3>
+            <p class="mb-6 text-4xl font-bold">
+              $99<span class="text-xl text-gray-400">/mo</span>
+            </p>
+            <button
+              class="w-full rounded-lg bg-[#61D6FF] py-3 font-bold text-[#001F3F] transition hover:bg-[#00B8A9]"
+            >
+              Choose Plan
+            </button>
+          </div>
+
+          <!-- Highlighted Plan -->
+          <div
+            class="scale-105 transform rounded-xl bg-gradient-to-b from-[#61D6FF] to-[#00B8A9] p-8"
+          >
+            <h3 class="mb-4 text-2xl font-bold text-[#001F3F]">Pro Trainer</h3>
+            <p class="mb-6 text-4xl font-bold">
+              $199<span class="text-xl text-[#001F3F]/80">/mo</span>
+            </p>
+            <button
+              class="w-full rounded-lg bg-[#001F3F] py-3 font-bold text-white transition hover:bg-[#002752]"
+            >
+              Choose Plan
+            </button>
+          </div>
+
+          <div class="rounded-xl border border-[#FF6200]/20 bg-[#001F3F] p-8">
+            <h3 class="mb-4 text-2xl font-bold text-[#FF6200]">Premium</h3>
+            <p class="mb-6 text-4xl font-bold">
+              $299<span class="text-xl text-gray-400">/mo</span>
+            </p>
+            <button
+              class="w-full rounded-lg bg-[#FF6200] py-3 font-bold text-[#001F3F] transition hover:bg-[#FF7835]"
+            >
+              Choose Plan
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

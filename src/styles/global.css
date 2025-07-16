@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    var(--font-inter), "Inter", "arial", "ui-sans-serif", "system-ui",
+    "sans-serif";
+  --font-brand: var(--font-outfit), sans-serif;
+
+  --font-new-science: "new-science", sans-serif;
+  --color-pale-azure: #61d6ff;
+}
+
+/* colors
+main dark bg: bg-zinc-900 or #18181b
+text-white/90 or 
+
+
+*/
