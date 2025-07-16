@@ -1,33 +1,33 @@
-# ────────────────────────────────
+########################################
 # Build & tooling output
-# ────────────────────────────────
-dist/               # Astro build output
-.astro/             # Astro typegen cache
-coverage/           # Test coverage reports (Jest/Vitest)
-node_modules/       # Dependencies
-*.log               # Catch‑all for log files
+########################################
+dist/
+.astro/
+coverage/
+node_modules/
+*.log
 
-# ────────────────────────────────
+########################################
 # Editor / IDE folders
-# ────────────────────────────────
-.vscode/            # VS Code workspace settings
-.idea/              # JetBrains IDE settings
-.yoyo/              # YoYo AI version control metadata
+########################################
+.vscode/
+.idea/
+.yoyo/
 
-# ────────────────────────────────
-# OS / file‑system side‑cars
-# ────────────────────────────────
-.DS_Store           # macOS Finder metadata
-Thumbs.db           # Windows thumbnail cache
-*:Zone.Identifier   # Windows NTFS ADS metadata
+########################################
+# OS / filesystem side‑cars
+########################################
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
 
-# ────────────────────────────────
+########################################
 # Environment & secrets
-# ────────────────────────────────
-.env*               # Any .env, .env.local, .env.production, etc.
-!.env.example       # Keep a sample env file in repo
+########################################
+.env*
+!.env.example       # keep a template
 
-# ────────────────────────────────
+########################################
 # Assets you don’t want in repo
-# ────────────────────────────────
-public/older versions/   # Scratch/archived images
+########################################
+public/older versions/
