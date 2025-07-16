@@ -3,16 +3,21 @@ import { defineConfig, fontProviders } from "astro/config";
 import astroIcon from "astro-icon";
 import tailwindcss from "@tailwindcss/vite";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.epicswagger.com",
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   integrations: [
     astroIcon(),
     // other integrations here if you have them
   ],
+
   experimental: {
     fonts: [
       {
@@ -31,4 +36,6 @@ export default defineConfig({
       },
     ],
   },
+
+  adapter: netlify(),
 });
