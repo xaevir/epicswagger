@@ -34,3 +34,4 @@ public/older versions/
 
 # Local Netlify folder
 .netlify
+src/components/pasted.astro
