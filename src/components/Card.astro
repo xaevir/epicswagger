@@ -1,0 +1,43 @@
+---
+// src/components/Card.astro
+export interface Props {
+  id?: string;
+  title?: string;
+  variant?: "light" | "dark";
+  class?: string;
+  style?: string;
+}
+
+const {
+  id,
+  title,
+  variant = "light",
+  class: className = "",
+  style = "",
+} = Astro.props;
+
+const tone =
+  variant === "light"
+    ? "bg-gray-50 text-zinc-900"
+    : "bg-zinc-900 text-white/90";
+---
+
+<section
+  id={id}
+  class={`mx-auto mb-5 max-w-6xl rounded-2xl px-8 py-16 ${tone} ${className}`}
+  style={style}
+>
+
+  <!-- Named slot with fallback header -->
+  <slot name="header">
+    {title && (
+      <div class="mb-8">
+        <h2 class="mb-2 font-brand text-sm font-bold tracking-wider uppercase">{title}</h2>
+        <div class="h-[3px] w-full bg-cyan-400"></div>
+      </div>
+    )}
+  </slot>
+
+  <slot />
+  <slot name="footer" />
+</section>

@@ -1,46 +1,63 @@
-<section
-  class="mx-auto my-8 max-w-7xl rounded-2xl bg-[#222426] px-4 py-10 lg:px-12 lg:py-16"
->
-  <!-- Section Title -->
-  <div>
-    <div class="mb-2 text-sm font-bold tracking-wider text-white uppercase">
-      The Science
-    </div>
-    <div class="mb-6 h-1 w-28 bg-cyan-400"></div>
-  </div>
+---
+import Card from "../components/Card.astro";
+import { Image } from "astro:assets";
+import beforeImg from "../assets/t000-male-35y-weight-loss-before.jpg";
+import afterImg from "../assets/t000-male-35y-weight-loss-after.jpg";
+
+const PORTRAIT_SIZES =
+  "(min-width:1024px) 256px, (min-width:768px) 224px, (min-width:640px) 192px, 160px";
+
+// Lean set: exact 1× widths + 2× picks (all ≤ your 768px original)
+const PORTRAIT_WIDTHS = [160, 192, 224, 256, 320, 512];
+---
+
+<Card variant="dark" title="The Science">
   <!-- Content Grid -->
   <div class="grid items-center gap-10 md:grid-cols-2">
     <!-- Images Card -->
-    <div class="flex flex-col items-center rounded-xl bg-white p-8">
+    <div class="mb-20 flex flex-col items-center rounded-xl bg-white p-8">
       <div class="flex gap-4">
-        <!-- Before Image -->
-        <div class="flex flex-col items-center">
-          <img
-            src="https://placehold.co/720x1080?text=placeholder"
-            alt="Before"
-            class="mb-2 h-56 w-40 rounded-md object-cover"
+        <!-- BEFORE -->
+        <figure class="flex flex-col items-center">
+          <Image
+            src={beforeImg}
+            alt="Before — week 0"
+            sizes={PORTRAIT_SIZES}
+            widths={PORTRAIT_WIDTHS}
+            class="h-auto w-40 rounded-md sm:w-48 md:w-56 lg:w-64"
+            loading="lazy"
           />
-          <span class="text-base font-semibold tracking-wide uppercase"
-            >Before</span
+          <figcaption
+            class="font-semibold tracking-wide text-black/80 uppercase"
           >
-        </div>
-        <!-- After Image -->
-        <div class="flex flex-col items-center">
-          <img
-            src="https://placehold.co/720x1080?text=placeholder"
-            alt="After"
-            class="mb-2 h-56 w-40 rounded-md object-cover"
+            Before
+          </figcaption>
+        </figure>
+
+        <!-- AFTER -->
+        <figure class="flex flex-col items-center">
+          <Image
+            src={afterImg}
+            alt="Before — week 0"
+            sizes={PORTRAIT_SIZES}
+            widths={PORTRAIT_WIDTHS}
+            class="h-auto w-40 rounded-md sm:w-48 md:w-56 lg:w-64"
+            loading="lazy"
           />
-          <span class="text-base font-semibold tracking-wide uppercase"
-            >After</span
+          <figcaption
+            class="font-semibold tracking-wide text-black/80 uppercase"
           >
-        </div>
+            After
+          </figcaption>
+        </figure>
       </div>
-      <p class="mt-6 text-center text-xs text-neutral-500">
+
+      <p class="mt-6 max-w-xs text-center text-xs text-neutral-500">
         Results may vary depending on your condition, starting weight, and
         commitment to the program.
       </p>
     </div>
+
     <!-- Text Content -->
     <div>
       <h2
@@ -68,4 +85,4 @@
       </div>
     </div>
   </div>
-</section>
+</Card>

@@ -37,5 +37,6 @@ export default defineConfig({
     ],
   },
 
-  adapter: netlify(),
+  // Only use the adapter in production
+  adapter: process.env.NODE_ENV === "production" ? netlify() : undefined,
 });

@@ -7,12 +7,22 @@
   --font-brand: var(--font-outfit), sans-serif;
 
   --font-new-science: "new-science", sans-serif;
+  --font-optima: "optima-lt-pro", sans-serif;
+
   --color-pale-azure: #61d6ff;
 }
 
-/* colors
-main dark bg: bg-zinc-900 or #18181b
-text-white/90 or 
-
-
-*/
+@layer base {
+  /* Make all headings use the brand font */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-brand;
+  }
+  p {
+    @apply font-optima;
+  }
+}

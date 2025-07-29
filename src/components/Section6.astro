@@ -1,0 +1,101 @@
+---
+// In your .astro file (e.g., NetworkSection.astro)
+import { Image } from "astro:assets";
+// Make sure this is the correct path to your high-resolution background image
+import networkBg from "../assets/network-card.jpg";
+---
+
+<section class="bg-black py-16 sm:py-24">
+  <!-- This is the container that respects your 'max-w-6xl' requirement -->
+  <div class="mx-auto max-w-6xl px-4">
+    <!-- 
+      THE LAYERING CONTAINER
+      - `grid`: The foundation of our layering technique.
+      - `rounded-2xl overflow-hidden`: Creates the clipped, rounded corners effect.
+      - `min-h-[600px]`: Gives the section a minimum height to look good.
+    -->
+    <div
+      class="relative grid min-h-[600px] grid-cols-1 grid-rows-1 overflow-hidden rounded-2xl"
+    >
+      <!-- 
+        LAYER 1: The Astro Image Component (The Background) 
+        This is placed on the bottom layer.
+      -->
+      <Image
+        src={networkBg}
+        alt="A view of planet Earth from orbit, representing a global network."
+        class="z-0 col-start-1 row-start-1 h-full w-full object-cover"
+        widths={[640, 768, 1152, 1920]}
+        sizes="(min-width: 1152px) 1152px, 100vw"
+        loading="lazy"
+        quality="mid"
+      />
+
+      <!-- 
+        LAYER 2: The Content Overlay
+        - Placed in the same cell, but on a higher z-index.
+        - `bg-black/60`: The semi-transparent dark overlay (scrim).
+      -->
+      <div
+        class="z-10 col-start-1 row-start-1 flex items-center bg-black/60 p-8 sm:p-12 lg:p-16"
+      >
+        <!-- The inner two-column layout for the text, stats, and button -->
+        <div class="grid w-full grid-cols-1 gap-12 text-white lg:grid-cols-2">
+          <!-- Left Column: Title & Stats -->
+          <div class="flex flex-col gap-8">
+            <h2 class="text-4xl font-extrabold tracking-tight md:text-5xl">
+              JOIN A WORLD CLASS NETWORK
+            </h2>
+            <div class="flex flex-col gap-4 sm:flex-row lg:flex-col">
+              <div
+                class="flex-1 rounded-xl bg-gray-900/80 p-4 backdrop-blur-sm"
+              >
+                <p class="text-3xl font-bold">3,500+</p>
+                <p class="text-sm text-gray-300">Members</p>
+              </div>
+              <div
+                class="flex-1 rounded-xl bg-gray-900/80 p-4 backdrop-blur-sm"
+              >
+                <p class="text-3xl font-bold">90%</p>
+                <p class="text-sm text-gray-300">Business owners</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Text & Button -->
+          <div
+            class="flex flex-col justify-center gap-8 text-gray-200 sm:justify-end"
+          >
+            <div class="prose prose-invert max-w-none text-gray-200">
+              <p>Supra Human isn’t just a fitness program.</p>
+              <p>
+                It’s one of the most robust networks that you’ll find, with high
+                performing business men and women.
+              </p>
+              <p>
+                Because of this, we require applicants to make more than 150k a
+                year to qualify.
+              </p>
+            </div>
+            <a
+              href="#"
+              class="inline-flex items-center justify-between self-start rounded-full border border-white/80 px-5 py-2.5 text-sm font-bold tracking-wider uppercase transition-colors hover:bg-white hover:text-black focus-visible:outline-white"
+            >
+              <span>Become Supra Human</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="ml-3 h-5 w-5"
+                ><path
+                  fill-rule="evenodd"
+                  d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
+                  clip-rule="evenodd"></path></svg
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

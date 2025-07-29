@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import { Font } from "astro:assets";
 import Navbar from "../components/Navbar.astro";
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,16 +11,11 @@ import Navbar from "../components/Navbar.astro";
     <!-- used in suprahuman
      <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
     -->
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-
-    <title>Epic Swagger</title>
-
     <link rel="stylesheet" href="https://use.typekit.net/jkr8epg.css" />
-
     <Font cssVariable="--font-outfit" preload />
     <Font cssVariable="--font-inter" preload />
     <script
@@ -27,25 +23,10 @@ import Navbar from "../components/Navbar.astro";
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
   </head>
-  <body>
-    <!-- Helper card: sits at top of viewport, full width, not sticky at all -->
-    <div
-      class="pointer-events-none absolute inset-x-0 top-0 z-0 mx-auto mt-3 h-36 max-w-6xl rounded-t-3xl bg-zinc-900"
-      aria-hidden="true"
-    >
-    </div>
-
-    <!-- Sticky nav: sits above, stays at top when scrolling -->
-    <div class="sticky top-4 z-10">
-      <div class="mx-auto max-w-5xl">
-        <Navbar />
-      </div>
-    </div>
-
-    <!-- Main content -->
-    <div class="mx-auto max-w-6xl rounded-b-3xl bg-zinc-900">
-      <slot name="hero" />
-    </div>
-    <slot />
+  <body class="mx-5">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

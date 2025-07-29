@@ -1,40 +1,87 @@
-<section
-  class="flex min-h-screen items-center justify-center bg-zinc-900 text-white/90"
-  style="background: linear-gradient(90deg, #18181b, #1f2937);"
->
-  <div class="mx-auto max-w-6xl space-y-6 px-4 py-24 text-center">
-    <h2 class="font-heading text-4xl font-bold">Section 4 The Difference</h2>
-    <p class="text-lg">
-      Other companies have glorified customer support reps for coaches. Supra
-      Human coaches have Phd’s, masters degrees, decades of experience, and most
-      importantly GIVE A F***
-    </p>
-  </div>
-</section>
+---
+import { Image } from "astro:assets";
+import Coaches from "../assets/coaches.jpg";
+import { Icon } from "astro-icon/components";
+import Card from "../components/Card.astro";
 
-<section
-  class="flex min-h-screen items-center justify-center text-white/90"
-  style="background-color: #121212;"
->
-  <div class="mx-auto max-w-6xl space-y-6 px-4 py-24 text-center">
-    <h2 class="font-heading text-4xl font-bold">Section 5: The Results</h2>
-    <p class="text-lg">
-      Transformation stories, powerful testimonials, and results you can see.
-    </p>
-  </div>
-</section>
+const features = [
+  { name: "Advanced Education", icon: "heroicons:academic-cap-solid" },
+  { name: "Certified Coaches", icon: "heroicons:check-badge-solid" },
+  { name: "Unrivaled Support", icon: "mdi:lifebuoy" },
+  { name: "Nutrition Experts", icon: "healthicons:nutrition-outline" },
+  { name: "Medical Professionals", icon: "fa6-solid:stethoscope" },
+];
+---
 
-<section
-  class="flex min-h-screen items-center justify-center text-white/90"
-  style="background-color: #1F1F1F;"
->
-  <div class="mx-auto max-w-6xl space-y-6 px-4 py-24 text-center">
-    <h2 class="font-heading text-4xl font-bold">Section 6: Our Process</h2>
-    <p class="text-lg">
-      95% of people who lose weight, gain it all back. Weight loss is where most
-      people stop. They end up a smaller version of a shape they already don’t
-      like. Our custom approach focuses on lifestyle integration, delivering
-      sustainable results.
-    </p>
+<Card variant="light" title="The Difference">
+  <div
+    class="grid grid-cols-1 items-center gap-x-6 gap-y-10 lg:grid-cols-[1fr_2fr]"
+  >
+    <!-- Left Column: All the text content -->
+    <div>
+      <h2
+        class="font-brand mt-8 text-4xl font-semibold tracking-tight text-gray-900 uppercase"
+      >
+        World Class Coaches
+      </h2>
+
+      <!-- Description Paragraphs -->
+      <p class="mt-6 leading-7 text-gray-800">
+        Elite competitors have a dedicated support system for success.
+      </p>
+      <p class="mt-4 leading-7 text-gray-800">
+        Supra Human masters have Ph.Ds, masters degrees, decades of experience,
+        and are dual credentialed with CSCS & PN1.
+      </p>
+
+      <!-- 
+        Features List with Icons using `astro-icon` 
+      -->
+      <ul class="mt-10 space-y-5 text-gray-800">
+        {
+          features.map((feature) => (
+            <li class="flex items-start">
+              <Icon
+                name={feature.icon}
+                class="h-6 w-6 flex-shrink-0 text-gray-700"
+              />
+              <span class="ml-4 font-semibold">{feature.name}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Right Column: Image with "CERTIFIED" overlay -->
+    <!-- `relative` is crucial for positioning the text overlay -->
+    <div class="relative">
+      <Image
+        src={Coaches}
+        alt="A collage showcasing the certified, world-class fitness coaches"
+        class="h-auto w-full rounded-2xl shadow-xl"
+        loading="lazy"
+        widths={[400, 800, 1200, 1600]}
+        sizes="(min-width: 1024px) 66vw, 100vw"
+      />
+
+      <!-- We will do this after we get the image proper
+        The "CERTIFIED" Overlay Text 
+        - `absolute`: Positions it on top of the image (its nearest `relative` parent).
+        - `inset-0`: Stretches it to cover the entire parent.
+        - `flex items-end justify-center`: A modern way to push content to the bottom-center.
+        - `backdrop-blur` + `bg-black/20`: Creates the glassmorphism effect.
+      -->
+      <div class="absolute inset-0 flex items-end justify-center pb-6">
+        <div
+          class="rounded-lg bg-black/30 px-6 py-2 whitespace-nowrap backdrop-blur-sm"
+        >
+          <p
+            class="text-4xl font-black tracking-widest text-white uppercase sm:text-5xl"
+          >
+            Certified
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</Card>

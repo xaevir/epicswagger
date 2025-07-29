@@ -1,0 +1,53 @@
+---
+import Card from "../components/Card.astro";
+---
+
+<Card variant="light">
+  <div class="mb-12 grid gap-8 md:grid-cols-2">
+    <div>
+      <h2 class="mb-4 text-4xl font-bold">EXCELLENCE IS THE TARGET</h2>
+      <div class="mb-1 font-semibold tracking-wide">
+        NOBODY DOES IT BETTER THAN US
+      </div>
+    </div>
+    <div>
+      <p class="mb-2 font-optima">
+        95% of people who lose weight, <strong class="font-bold"
+          >GAIN IT ALL BACK</strong
+        >. Weight loss is where most people stop. They end up a smaller
+        version...
+      </p>
+      <p>
+        Our custom approach focuses on lifestyle integration, delivering
+        sustainable results.
+      </p>
+    </div>
+  </div>
+
+  <h3 class="mb-8 text-3xl font-bold">OUR 4 STEP PROCESS</h3>
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+    {
+      [
+        { num: 1, title: "RAPID", subtitle: "FAT LOSS" },
+        { num: 2, title: "METABOLIC", subtitle: "OPTIMIZATION" },
+        { num: 3, title: "MAXIMUM", Subtitle: "PERFORMANCE" },
+        { num: 4, title: "IDENTITY", subtitle: "INTEGRATION" },
+      ].map(({ num, title, subtitle }) => (
+          <div class="
+            flex flex-col justify-between 
+            bg-gray-900 text-white 
+            p-8 rounded-2xl aspect-square
+          ">
+            <!-- Top Part: The Number -->
+            <p class="text-4xl font-bold text-center">{num}</p>
+            
+            <!-- Bottom Part: The Text -->
+            <div class="text-center">
+              <p class="text-lg font-semibold uppercase tracking-wider">{title}</p>
+              <p class="text-lg font-semibold uppercase tracking-wider">{subtitle}</p>
+            </div>
+          </div>
+      ))
+    }
+  </div>
+</Card>

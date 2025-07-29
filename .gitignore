@@ -31,3 +31,6 @@ Thumbs.db
 # Assets you don’t want in repo
 ########################################
 public/older versions/
+
+# Local Netlify folder
+.netlify

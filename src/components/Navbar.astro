@@ -2,9 +2,11 @@
 import Logo from "../components/Logo.astro";
 ---
 
-<header
-  x-data="{ navLight: false, mobileOpen: false }"
-  x-init="
+<div class="sticky top-4 z-10 mt-10">
+  <div class="mx-auto max-w-5xl">
+    <header
+      x-data="{ navLight: false, mobileOpen: false }"
+      x-init="
     const updateNavLight = () => {
       // Find all section elements with a background class
       const sections = Array.from(document.querySelectorAll('section'));
@@ -12,7 +14,7 @@ import Logo from "../components/Logo.astro";
       for (const section of sections) {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 64 && rect.bottom >= 64) { // 64px = navbar height
-          navLight = section.classList.contains('bg-white/90');
+          navLight = section.classList.contains('bg-gray-50');
           found = true;
           break;
         }
@@ -23,101 +25,51 @@ import Logo from "../components/Logo.astro";
     window.addEventListener('resize', updateNavLight);
     updateNavLight();
   "
-  :class="navLight
-    ? 'mt-10 rounded-full px-6 py-2 transition-colors duration-300 backdrop-blur-[12.5px] bg-white/3 text-black border border-white/5'
-    : 'mt-10 rounded-full px-6 py-2 transition-colors duration-300 backdrop-blur-[12.5px] bg-white/3 text-white/90 border border-white/5'"
->
-  <!-- navbar content -->
-  <nav class="flex items-center justify-between">
-    <!-- Logo -->
-    <Logo />
-    <!-- Desktop nav links -->
-    <div class="hidden justify-between md:flex">
-      <a
-        href="#science"
-        :class="navLight ? 'text-zinc-900' : 'text-[#e4e9eb]'"
-        class="font-brand px-4 text-sm font-semibold tracking-[-0.3px] uppercase transition-colors duration-200 hover:underline"
-      >
-        THE SCIENCE
-      </a>
-      <a
-        href="#difference"
-        :class="navLight ? 'text-zinc-900' : 'text-[#e4e9eb]'"
-        class="font-brand px-4 text-sm font-semibold tracking-[-0.3px] uppercase transition-colors duration-200 hover:underline"
-      >
-        THE DIFFERENCE
-      </a>
-      <a
-        href="#results"
-        :class="navLight ? 'text-zinc-900' : 'text-[#e4e9eb]'"
-        class="font-brand px-4 text-sm font-semibold tracking-[-0.3px] uppercase transition-colors duration-200 hover:underline"
-      >
-        THE RESULTS
-      </a>
-    </div>
-    <!-- Desktop CTA -->
-    <a
-      href="#cta"
-      :class="navLight ? 'text-zinc-900 border-zinc-900' : 'text-[#e4e9eb] border-[#e4e9eb]/25'"
-      class="font-oufit hidden scale-95 rounded-full border bg-white/5 px-10 py-3 text-sm font-bold tracking-[-0.3px] uppercase transition-all duration-300 hover:scale-100 hover:bg-[#e4e9eb] hover:text-zinc-900 md:inline-block"
+      class="rounded-full px-6 py-2 transition-colors duration-300 backdrop-blur-[12.5px] border border-white/5"
+      :class="navLight ? 'bg-white/3 text-black' : 'bg-white/3 text-white/90'"
     >
-      Hit My Reset
-    </a>
-    <!-- Mobile Hamburger -->
-    <button
-      class="p-2 md:hidden"
-      aria-label="Open menu"
-      @click="mobileOpen = true"
-    >
-      <svg
-        class="h-8 w-8"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"
-        ></path>
-      </svg>
-    </button>
-  </nav>
-
-  <!-- Slide-out mobile menu -->
-  <div
-    class="fixed inset-0 z-50 md:hidden"
-    x-show="mobileOpen"
-    x-transition:enter="transition duration-200"
-    x-transition:enter-start="opacity-0"
-    x-transition:enter-end="opacity-100"
-    x-transition:leave="transition duration-150"
-    x-transition:leave-start="opacity-100"
-    x-transition:leave-end="opacity-0"
-    style="display:none"
-    aria-modal="true"
-    role="dialog"
-  >
-    <!-- Overlay -->
-    <div
-      class="absolute inset-0 bg-black/70 backdrop-blur"
-      @click="mobileOpen = false"
-    >
-    </div>
-    <!-- Panel -->
-    <div
-      class="absolute top-0 right-0 flex h-full w-4/5 max-w-xs flex-col space-y-6 bg-white/90 p-6 text-black shadow-lg"
-      x-transition:enter="transition-transform transform duration-200"
-      x-transition:enter-start="translate-x-full"
-      x-transition:enter-end="translate-x-0"
-      x-transition:leave="transition-transform transform duration-150"
-      x-transition:leave-start="translate-x-0"
-      x-transition:leave-end="translate-x-full"
-      @click.away="mobileOpen = false"
-    >
-      <div class="mb-4 flex items-center justify-between">
-        <span class="text-xl font-bold"
-          >EPIC<span class="text-indigo-400">SWAGGER</span></span
+      <!-- navbar content -->
+      <nav class="flex items-center justify-between">
+        <!-- Logo -->
+        <Logo />
+        <!-- Desktop nav links -->
+        <div class="hidden justify-between md:flex">
+          <a
+            href="#science"
+            :class="navLight ? 'text-zinc-900' : 'text-[#e4e9eb]'"
+            class="font-brand px-4 text-sm font-semibold tracking-[-0.3px] uppercase transition-colors duration-200 hover:underline"
+          >
+            THE SCIENCE
+          </a>
+          <a
+            href="#difference"
+            :class="navLight ? 'text-zinc-900' : 'text-[#e4e9eb]'"
+            class="font-brand px-4 text-sm font-semibold tracking-[-0.3px] uppercase transition-colors duration-200 hover:underline"
+          >
+            THE DIFFERENCE
+          </a>
+          <a
+            href="#results"
+            :class="navLight ? 'text-zinc-900' : 'text-[#e4e9eb]'"
+            class="font-brand px-4 text-sm font-semibold tracking-[-0.3px] uppercase transition-colors duration-200 hover:underline"
+          >
+            THE RESULTS
+          </a>
+        </div>
+        <!-- Desktop CTA -->
+        <a
+          href="#cta"
+          :class="navLight ? 'text-zinc-900 border-zinc-900' : 'text-[#e4e9eb] border-[#e4e9eb]/25'"
+          class="font-oufit hidden scale-95 rounded-full border bg-white/5 px-10 py-3 text-sm font-bold tracking-[-0.3px] uppercase transition-all duration-300 hover:scale-100 hover:bg-[#e4e9eb] hover:text-zinc-900 md:inline-block"
         >
-        <button @click="mobileOpen = false" class="p-2" aria-label="Close menu">
+          Hit My Reset
+        </a>
+        <!-- Mobile Hamburger -->
+        <button
+          class="p-2 md:hidden"
+          aria-label="Open menu"
+          @click="mobileOpen = true"
+        >
           <svg
             class="h-8 w-8"
             fill="none"
@@ -128,24 +80,82 @@ import Logo from "../components/Logo.astro";
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"></path>
+              d="M4 8h16M4 16h16"></path>
           </svg>
         </button>
+      </nav>
+
+      <!-- Slide-out mobile menu -->
+      <div
+        class="fixed inset-0 z-50 md:hidden"
+        x-show="mobileOpen"
+        x-transition:enter="transition duration-200"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition duration-150"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        style="display:none"
+        aria-modal="true"
+        role="dialog"
+      >
+        <!-- Overlay -->
+        <div
+          class="absolute inset-0 bg-black/70 backdrop-blur"
+          @click="mobileOpen = false"
+        >
+        </div>
+        <!-- Panel -->
+        <div
+          class="absolute top-0 right-0 flex h-full w-4/5 max-w-xs flex-col space-y-6 bg-white/90 p-6 text-black shadow-lg"
+          x-transition:enter="transition-transform transform duration-200"
+          x-transition:enter-start="translate-x-full"
+          x-transition:enter-end="translate-x-0"
+          x-transition:leave="transition-transform transform duration-150"
+          x-transition:leave-start="translate-x-0"
+          x-transition:leave-end="translate-x-full"
+          @click.away="mobileOpen = false"
+        >
+          <div class="mb-4 flex items-center justify-between">
+            <span class="text-xl font-bold"
+              >EPIC<span class="text-indigo-400">SWAGGER</span></span
+            >
+            <button
+              @click="mobileOpen = false"
+              class="p-2"
+              aria-label="Close menu"
+            >
+              <svg
+                class="h-8 w-8"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <a href="#science" class="block rounded px-2 py-2 hover:bg-gray-100"
+            >THE SCIENCE</a
+          >
+          <a
+            href="#difference"
+            class="block rounded px-2 py-2 hover:bg-gray-100">THE DIFFERENCE</a
+          >
+          <a href="#results" class="block rounded px-2 py-2 hover:bg-gray-100"
+            >THE RESULTS</a
+          >
+          <a
+            href="#cta"
+            class="mt-8 block rounded-full border border-black px-6 py-2 text-center lowercase transition hover:bg-black hover:text-white"
+            >Hit My Reset</a
+          >
+        </div>
       </div>
-      <a href="#science" class="block rounded px-2 py-2 hover:bg-gray-100"
-        >THE SCIENCE</a
-      >
-      <a href="#difference" class="block rounded px-2 py-2 hover:bg-gray-100"
-        >THE DIFFERENCE</a
-      >
-      <a href="#results" class="block rounded px-2 py-2 hover:bg-gray-100"
-        >THE RESULTS</a
-      >
-      <a
-        href="#cta"
-        class="mt-8 block rounded-full border border-black px-6 py-2 text-center lowercase transition hover:bg-black hover:text-white"
-        >Hit My Reset</a
-      >
-    </div>
+    </header>
   </div>
-</header>
+</div>
