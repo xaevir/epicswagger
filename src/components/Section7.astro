@@ -1,0 +1,70 @@
+---
+import Card from "../components/Card.astro";
+import CarouselSwiper from "../components/CarouselSwiper.astro";
+import type { Transformation } from "../components/CarouselSwiper.astro";
+
+import beforeImg from "../assets/t000-male-35y-weight-loss-before.jpg";
+import afterImg from "../assets/t000-male-35y-weight-loss-after.jpg";
+
+const transformations: Transformation[] = [
+  {
+    name: "Sarah M.",
+    story: "Lost 24 lbs in 12 weeks",
+    beforeImg: beforeImg.src,
+    afterImg: afterImg.src,
+    altText: "Body transformation of Sarah M.",
+  },
+  {
+    name: "David L.",
+    story: "Lost 38 lbs in 16 weeks",
+    beforeImg: beforeImg.src,
+    afterImg: afterImg.src,
+    altText: "Body transformation of David L.",
+  },
+  {
+    name: "Mike T.",
+    story: "Completely changed his lifestyle in just 6 months.",
+    beforeImg: beforeImg.src,
+    afterImg: afterImg.src,
+    altText: "Body transformation of Mike T.",
+  },
+  {
+    name: "Bobby T.",
+    story: "Completely changed his lifestyle in just 6 months.",
+    beforeImg: beforeImg.src,
+    afterImg: afterImg.src,
+    altText: "Body transformation of Mike T.",
+  },
+  {
+    name: "Bobby T.",
+    story: "Completely changed his lifestyle in just 6 months.",
+    beforeImg: beforeImg.src,
+    afterImg: afterImg.src,
+    altText: "Body transformation of Mike T.",
+  },
+  {
+    name: "Bobby T.",
+    story: "Completely changed his lifestyle in just 6 months.",
+    beforeImg: beforeImg.src,
+    afterImg: afterImg.src,
+    altText: "Body transformation of Mike T.",
+  },
+  {
+    name: "Bobby T.",
+    story: "Completely changed his lifestyle in just 6 months.",
+    beforeImg: beforeImg.src,
+    afterImg: afterImg.src,
+    altText: "Body transformation of Mike T.",
+  },
+  {
+    name: "Bobby T.",
+    story: "Completely changed his lifestyle in just 6 months.",
+    beforeImg: beforeImg.src,
+    afterImg: afterImg.src,
+    altText: "Body transformation of Mike T.",
+  },
+];
+---
+
+<h1>Carousel</h1>
+<CarouselSwiper data={transformations} title="Real People, Real Results" />
