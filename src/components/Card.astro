@@ -18,26 +18,27 @@ const {
 
 const tone =
   variant === "light"
-    ? "bg-gray-50 text-zinc-900"
-    : "bg-zinc-900 text-white/90";
+    ? "bg-[#F9FAFB] text-zinc-900" // Slightly adjusted colors for better contrast
+    : "bg-[#191a1c] text-gray-100";
 ---
 
-<section
-  id={id}
-  class={`mx-auto mb-5 max-w-6xl rounded-2xl px-8 py-16 ${tone} ${className}`}
-  style={style}
->
+<section id={id} class={`mb-5 rounded-2xl ${tone} ${className}`} style={style}>
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <!-- Named slot with fallback header -->
+    <slot name="header">
+      {
+        title && (
+          <div class="mb-8">
+            <h2 class="font-brand mb-2 text-sm font-bold tracking-wider uppercase">
+              {title}
+            </h2>
+            <div class="h-[3px] w-full bg-cyan-400" />
+          </div>
+        )
+      }
+    </slot>
 
-  <!-- Named slot with fallback header -->
-  <slot name="header">
-    {title && (
-      <div class="mb-8">
-        <h2 class="mb-2 font-brand text-sm font-bold tracking-wider uppercase">{title}</h2>
-        <div class="h-[3px] w-full bg-cyan-400"></div>
-      </div>
-    )}
-  </slot>
-
-  <slot />
-  <slot name="footer" />
+    <slot />
+    <slot name="footer" />
+  </div>
 </section>

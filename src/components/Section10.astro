@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../assets/get-ripped-bg.jpg";
+---
+
+<section class="mb-5 overflow-hidden rounded-2xl bg-[#353535] text-white">
+  <div class="relative min-h-[500px] w-full">
+    <!-- Image Layer with Progressive Cropping -->
+    <Image
+      src={heroImage}
+      alt="Muscular person flexing"
+      class="/* Mobile focal point */ absolute top-0 right-0 z-0 h-full w-full object-cover object-[65%_center] sm:object-[75%_center] md:w-[85%] md:object-[80%_center] lg:w-[70%] lg:object-right"
+      widths={[400, 600, 800, 1200, 1920]}
+      sizes="(min-width: 1024px) 70vw, (min-width: 768px) 85vw, 100vw"
+      loading="lazy"
+      quality="high"
+    />
+
+    <!-- Text Content Layer -->
+    <div class="relative z-10 h-full w-full">
+      <div class="mx-auto h-full max-w-6xl px-6 py-8 sm:px-6 md:py-12 lg:px-8">
+        <div class="flex h-full flex-col justify-center">
+          <h2 class="mb-2 text-3xl leading-tight md:text-7xl">
+            <b>ZERO</b> RISK
+          </h2>
+          <h2 class="mb-2 text-3xl leading-tight md:text-6xl">
+            GET <b>RIPPED,</b> OR YOU DON'T PAY
+          </h2>
+          <h5 class="mb-6 font-bold md:mb-8">NO QUESTIONS ASKED</h5>
+          <a
+            href="#"
+            class="inline-flex w-fit items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold tracking-wider uppercase transition-colors hover:bg-gray-800"
+          >
+            <span>Book your consultation</span>
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

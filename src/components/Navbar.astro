@@ -3,7 +3,7 @@ import Logo from "../components/Logo.astro";
 ---
 
 <div class="sticky top-4 z-10 mt-10">
-  <div class="mx-auto max-w-5xl">
+  <div class="mx-auto max-w-7xl">
     <header
       x-data="{ navLight: false, mobileOpen: false }"
       x-init="
@@ -14,7 +14,7 @@ import Logo from "../components/Logo.astro";
       for (const section of sections) {
         const rect = section.getBoundingClientRect();
         if (rect.top <= 64 && rect.bottom >= 64) { // 64px = navbar height
-          navLight = section.classList.contains('bg-gray-50');
+          navLight = section.classList.contains('bg-[#F9FAFB]');
           found = true;
           break;
         }
@@ -25,8 +25,8 @@ import Logo from "../components/Logo.astro";
     window.addEventListener('resize', updateNavLight);
     updateNavLight();
   "
-      class="rounded-full px-6 py-2 transition-colors duration-300 backdrop-blur-[12.5px] border border-white/5"
-      :class="navLight ? 'bg-white/3 text-black' : 'bg-white/3 text-white/90'"
+      class="rounded-full border border-white/5 px-6 py-2 backdrop-blur-[12.5px] transition-colors duration-300"
+      :class="navLight ? 'bg-white/1 text-black' : 'bg-white/1 text-white/90'"
     >
       <!-- navbar content -->
       <nav class="flex items-center justify-between">
@@ -62,7 +62,7 @@ import Logo from "../components/Logo.astro";
           :class="navLight ? 'text-zinc-900 border-zinc-900' : 'text-[#e4e9eb] border-[#e4e9eb]/25'"
           class="font-oufit hidden scale-95 rounded-full border bg-white/5 px-10 py-3 text-sm font-bold tracking-[-0.3px] uppercase transition-all duration-300 hover:scale-100 hover:bg-[#e4e9eb] hover:text-zinc-900 md:inline-block"
         >
-          Hit My Reset
+          Book my consulation
         </a>
         <!-- Mobile Hamburger -->
         <button
@@ -152,7 +152,7 @@ import Logo from "../components/Logo.astro";
           <a
             href="#cta"
             class="mt-8 block rounded-full border border-black px-6 py-2 text-center lowercase transition hover:bg-black hover:text-white"
-            >Hit My Reset</a
+            >Book my consultation</a
           >
         </div>
       </div>

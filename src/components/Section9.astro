@@ -1,0 +1,101 @@
+---
+import Card from "../components/Card.astro";
+import { Icon } from "astro-icon/components";
+
+// An array of objects makes the data easy to manage and loop through.
+const featuresLeft = [
+  {
+    icon: "mdi:stethoscope",
+    text: "Custom workout program tailored to your lifestyle, schedule, and fitness goals",
+  },
+  {
+    icon: "mdi:podium-gold",
+    text: "Relentless accountability system",
+  },
+  {
+    icon: "mdi:atom-variant",
+    text: "Ion science backed personalized game plan",
+  },
+  {
+    icon: "mdi:airplane-takeoff",
+    text: "Quarterly in person fly-ins (Elite Program)",
+  },
+];
+
+const featuresRight = [
+  {
+    icon: "mdi:medical-bag",
+    text: "Energy, sleep, mental clarity, and hormone optimization (Elite Program)",
+  },
+  {
+    icon: "mdi:desktop-classic",
+    text: "Coaches office hours call",
+  },
+  {
+    icon: "mdi:brain",
+    text: "Mental performance training with John Madsen",
+  },
+  {
+    icon: "mdi:pill",
+    text: "Customized medical protocol (Elite Program)",
+  },
+];
+---
+
+<Card variant="light" class="!py-24">
+  <!-- Use !py-24 to override default padding -->
+  <!-- Header Section -->
+  <div class="">
+    <h2 class="text-3xl font-extrabold tracking-tight sm:text-5xl">
+      WELCOME TO THE PINNACLE OF PERFORMANCE
+    </h2>
+    <p class="mt-4 max-w-3xl text-lg">
+      This is where world class experience drive world class results. Our Supra
+      Human staff is full-time and in-house. Nothing is outsourced. You only get
+      the best.
+    </p>
+  </div>
+
+  <!-- 
+    The Main Grid Container
+    - Default: grid-cols-1 (stacks the cards vertically)
+    - Large Screens (lg): grid-cols-2 (places them side-by-side)
+  -->
+  <div class="mt-20 grid grid-cols-1 gap-8 lg:grid-cols-2">
+    <!-- Left Features Card -->
+    <div
+      class="flex flex-col gap-y-8 rounded-3xl bg-zinc-900 p-8 text-white/90 sm:p-10"
+    >
+      {
+        featuresLeft.map((feature) => (
+          <div class="flex items-start gap-x-5">
+            <div class="flex-shrink-0">
+              <Icon name={feature.icon} class="h-7 w-7" />
+            </div>
+            <p class="leading-relaxed font-bold tracking-wider uppercase">
+              {feature.text}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Right Features Card -->
+    <div
+      class="flex flex-col gap-y-8 rounded-3xl bg-zinc-900 p-8 text-white/90 sm:p-10"
+    >
+      {
+        featuresRight.map((feature) => (
+          <div class="flex items-start gap-x-5">
+            <div class="flex-shrink-0">
+              <Icon name={feature.icon} class="h-7 w-7" />
+            </div>
+            <p class="leading-relaxed font-bold tracking-wider uppercase">
+              {feature.text}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Card>
