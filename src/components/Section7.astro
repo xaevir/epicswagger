@@ -3,15 +3,18 @@ import Card from "../components/Card.astro";
 import CarouselSwiper from "../components/CarouselSwiper.astro";
 import type { Transformation } from "../components/CarouselSwiper.astro";
 
-import beforeImg from "../assets/t000-male-35y-weight-loss-before.jpg";
-import afterImg from "../assets/t000-male-35y-weight-loss-after.jpg";
+import beforeImg from "../assets/t002-before.jpg";
+import afterImg from "../assets/t002-after.jpg";
+
+import t002Before from "../assets/t002-before.jpg";
+import t002After from "../assets/t002-after.jpg";
 
 const transformations: Transformation[] = [
   {
-    name: "Sarah M.",
+    name: "Mike T.",
     story: "Lost 24 lbs in 12 weeks",
-    beforeImg: beforeImg.src,
-    afterImg: afterImg.src,
+    beforeImg: t002Before.src,
+    afterImg: t002After.src,
     altText: "Body transformation of Sarah M.",
   },
   {
@@ -66,5 +69,6 @@ const transformations: Transformation[] = [
 ];
 ---
 
-<h1>Carousel</h1>
-<CarouselSwiper data={transformations} title="Real People, Real Results" />
+<Card variant="light">
+  <CarouselSwiper data={transformations} title="Real People, Real Results" />
+</Card>
