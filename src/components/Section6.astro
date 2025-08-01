@@ -1,11 +1,10 @@
 ---
-// In your .astro file (e.g., NetworkSection.astro)
+import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
-// Make sure this is the correct path to your high-resolution background image
 import networkBg from "../assets/network-card.jpg";
 ---
 
-<section class="bg-black py-16 sm:py-24">
+<Card variant="light">
   <!-- This is the container that respects your 'max-w-6xl' requirement -->
   <div class="mx-auto max-w-6xl px-4">
     <!-- 
@@ -42,21 +41,23 @@ import networkBg from "../assets/network-card.jpg";
         <!-- The inner two-column layout for the text, stats, and button -->
         <div class="grid w-full grid-cols-1 gap-12 text-white lg:grid-cols-2">
           <!-- Left Column: Title & Stats -->
-          <div class="flex flex-col gap-8">
-            <h2 class="text-4xl font-extrabold tracking-tight md:text-5xl">
+          <div class="flex flex-col gap-x-10 gap-y-12">
+            <h2 class="text-5xl font-extrabold tracking-tight">
               JOIN A WORLD CLASS NETWORK
             </h2>
-            <div class="flex flex-col gap-4 sm:flex-row lg:flex-col">
+            <div
+              class="flex flex-col gap-6 text-center sm:flex-row lg:flex-col"
+            >
               <div
                 class="flex-1 rounded-xl bg-gray-900/80 p-4 backdrop-blur-sm"
               >
-                <p class="text-3xl font-bold">3,500+</p>
+                <p class="text-5xl font-extrabold">3,500+</p>
                 <p class="text-sm text-gray-300">Members</p>
               </div>
               <div
                 class="flex-1 rounded-xl bg-gray-900/80 p-4 backdrop-blur-sm"
               >
-                <p class="text-3xl font-bold">90%</p>
+                <p class="text-5xl font-bold">90%</p>
                 <p class="text-sm text-gray-300">Business owners</p>
               </div>
             </div>
@@ -66,7 +67,9 @@ import networkBg from "../assets/network-card.jpg";
           <div
             class="flex flex-col justify-center gap-8 text-gray-200 sm:justify-end"
           >
-            <div class="prose prose-invert max-w-none text-gray-200">
+            <div
+              class="prose prose-invert max-w-none space-y-6 text-sm text-gray-200"
+            >
               <p>Supra Human isn’t just a fitness program.</p>
               <p>
                 It’s one of the most robust networks that you’ll find, with high
@@ -81,7 +84,7 @@ import networkBg from "../assets/network-card.jpg";
               href="#"
               class="inline-flex items-center justify-between self-start rounded-full border border-white/80 px-5 py-2.5 text-sm font-bold tracking-wider uppercase transition-colors hover:bg-white hover:text-black focus-visible:outline-white"
             >
-              <span>Become Supra Human</span>
+              <span>Hit my reset</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -98,4 +101,4 @@ import networkBg from "../assets/network-card.jpg";
       </div>
     </div>
   </div>
-</section>
+</Card>
