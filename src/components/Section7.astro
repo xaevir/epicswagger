@@ -1,13 +1,16 @@
 ---
-import Card from "../components/Card.astro";
+import SectionShell from "../components/SectionShell.astro";
 import CarouselSwiper from "../components/CarouselSwiper.astro";
 import type { Transformation } from "../components/CarouselSwiper.astro";
 
-import beforeImg from "../assets/t002-before.jpg";
-import afterImg from "../assets/t002-after.jpg";
-
 import t002Before from "../assets/t002-before.jpg";
 import t002After from "../assets/t002-after.jpg";
+import t003Before from "../assets/t003-before.jpg";
+import t003After from "../assets/t003-after.jpg";
+import t004Before from "../assets/t004-before.jpg";
+import t004After from "../assets/t004-after.jpg";
+import t005Before from "../assets/t005-before.jpg";
+import t005After from "../assets/t005-after.jpg";
 
 const transformations: Transformation[] = [
   {
@@ -15,60 +18,60 @@ const transformations: Transformation[] = [
     story: "Lost 24 lbs in 12 weeks",
     beforeImg: t002Before.src,
     afterImg: t002After.src,
-    altText: "Body transformation of Sarah M.",
-  },
-  {
-    name: "David L.",
-    story: "Lost 38 lbs in 16 weeks",
-    beforeImg: beforeImg.src,
-    afterImg: afterImg.src,
-    altText: "Body transformation of David L.",
-  },
-  {
-    name: "Mike T.",
-    story: "Completely changed his lifestyle in just 6 months.",
-    beforeImg: beforeImg.src,
-    afterImg: afterImg.src,
     altText: "Body transformation of Mike T.",
   },
   {
-    name: "Tim T.",
-    story: "Completely changed his lifestyle in just 6 months.",
-    beforeImg: beforeImg.src,
-    afterImg: afterImg.src,
-    altText: "Body transformation of Mike T.",
+    name: "Monica L.",
+    story: "Lost 22 lbs in 16 weeks",
+    beforeImg: t003Before.src,
+    afterImg: t003After.src,
+    altText: "Body transformation of Monica L.",
   },
   {
     name: "John T.",
     story: "Completely changed his lifestyle in just 6 months.",
-    beforeImg: beforeImg.src,
-    afterImg: afterImg.src,
+    beforeImg: t004Before.src,
+    afterImg: t004After.src,
+    altText: "Body transformation of John T.",
+  },
+  {
+    name: "Jen T.",
+    story: "Completely changed his lifestyle in just 6 months.",
+    beforeImg: t005Before.src,
+    afterImg: t005After.src,
+    altText: "Body transformation of Jen T.",
+  },
+  {
+    name: "Mike T.",
+    story: "Lost 24 lbs in 12 weeks",
+    beforeImg: t002Before.src,
+    afterImg: t002After.src,
     altText: "Body transformation of Mike T.",
   },
   {
-    name: "Alex T.",
-    story: "Completely changed his lifestyle in just 6 months.",
-    beforeImg: beforeImg.src,
-    afterImg: afterImg.src,
-    altText: "Body transformation of Mike T.",
+    name: "Monica L.",
+    story: "Lost 22 lbs in 16 weeks",
+    beforeImg: t003Before.src,
+    afterImg: t003After.src,
+    altText: "Body transformation of Monica L.",
   },
   {
-    name: "Jimmy T.",
+    name: "John T.",
     story: "Completely changed his lifestyle in just 6 months.",
-    beforeImg: beforeImg.src,
-    afterImg: afterImg.src,
-    altText: "Body transformation of Mike T.",
+    beforeImg: t004Before.src,
+    afterImg: t004After.src,
+    altText: "Body transformation of John T.",
   },
   {
-    name: "Greg T.",
+    name: "Jen T.",
     story: "Completely changed his lifestyle in just 6 months.",
-    beforeImg: beforeImg.src,
-    afterImg: afterImg.src,
-    altText: "Body transformation of Mike T.",
+    beforeImg: t005Before.src,
+    afterImg: t005After.src,
+    altText: "Body transformation of Jen T.",
   },
 ];
 ---
 
-<section id="gallery" class="mb-5 rounded-2xl bg-[#F9FAFB] text-zinc-900">
+<SectionShell id="gallery" variant="light">
   <CarouselSwiper data={transformations} title="Real People, Real Results" />
-</section>
+</SectionShell>

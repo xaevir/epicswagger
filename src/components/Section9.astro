@@ -2,96 +2,91 @@
 import Card from "../components/Card.astro";
 import { Icon } from "astro-icon/components";
 
-// An array of objects makes the data easy to manage and loop through.
-const featuresLeft = [
+const pillars = [
   {
-    icon: "mdi:stethoscope",
-    text: "Custom workout program tailored to your lifestyle, schedule, and fitness goals",
+    title: "Excellence",
+    subtitle: "The standard. The separator. The silent signal of someone who lives with intention.",
+    benefits: [
+      "Builds trust instantly with clients, coworkers, family, and yourself.",
+      "Eliminates mediocrity by turning discipline into identity.",
+      "Raises your internal thermostat so average no longer feels comfortable.",
+      "Attracts high-caliber people because excellence recognizes excellence.",
+      "Delivers compound wins in family, business, fitness, relationships, and mindset.",
+      "Becomes your quiet flex - presence over noise, results over hype."
+    ],
+    footer: "Excellence isn't extra. It's the standard and when it's your baseline, everything around you rises."
   },
   {
-    icon: "mdi:podium-gold",
-    text: "Relentless accountability system",
+    title: "Confidence",
+    subtitle: "Not loud. Not performative. The unshakable calm of someone who's done the work.",
+    benefits: [
+      "Unlocks decisive action — no more hesitation, overthinking, or playing small.",
+      "Creates magnetic presence — your energy walks into the room before you do.",
+      "Rewires self-perception — you stop hoping to be enough and start knowing you are.",
+      "Improves performance under pressure — because confidence is competence expressed.",
+      "Changes how people treat you — respect, opportunity, and authority follow confidence.",
+      "Fuels consistency — when you believe in yourself, you follow through."
+    ],
+    footer: "Confidence is currency. And we print it in reps, sweat, and alignment."
   },
   {
-    icon: "mdi:atom-variant",
-    text: "Ion science backed personalized game plan",
-  },
-  {
-    icon: "mdi:airplane-takeoff",
-    text: "Quarterly in person fly-ins (Elite Program)",
-  },
-];
-
-const featuresRight = [
-  {
-    icon: "mdi:medical-bag",
-    text: "Energy, sleep, mental clarity, and hormone optimization (Elite Program)",
-  },
-  {
-    icon: "mdi:desktop-classic",
-    text: "Coaches office hours call",
-  },
-  {
-    icon: "mdi:brain",
-    text: "Mental performance training with John Madsen",
-  },
-  {
-    icon: "mdi:pill",
-    text: "Customized medical protocol (Elite Program)",
-  },
+    title: "Attractiveness",
+    subtitle: "Not vanity. Not filters. It's vitality, discipline, and presence—reflected outward.",
+    benefits: [
+      "Opens doors before you speak — humans are wired to respond to aesthetics and posture.",
+      "Boosts self-worth — because how you care for your body reflects how you value yourself.",
+      "Increases perceived leadership — attractive people are seen as more capable, trustworthy, and persuasive.",
+      "Supercharges dating & relationship dynamics — you become the standard, not the seeker.",
+      "Raises your energy — physically, sexually, socially.",
+      "Reinforces identity — you no longer try to feel attractive—you walk like it's inevitable."
+    ],
+    footer: "Attractiveness isn't about beauty. It's about being in demand with your own reflection."
+  }
 ];
 ---
 
-<Card variant="light" class="!py-24">
-  <!-- Use !py-24 to override default padding -->
-  <!-- Header Section -->
-  <div class="">
-    <h2 class="text-3xl font-extrabold tracking-tight sm:text-5xl">
-      WELCOME TO THE PINNACLE OF PERFORMANCE
-    </h2>
-    <p class="mt-4 max-w-3xl text-lg">
-      This is where world class experience drive world class results. Our Supra
-      Human staff is full-time and in-house. Nothing is outsourced. You only get
-      the best.
-    </p>
-  </div>
-
-  <!-- 
-    The Main Grid Container
-    - Default: grid-cols-1 (stacks the cards vertically)
-    - Large Screens (lg): grid-cols-2 (places them side-by-side)
-  -->
-  <div class="mt-20 grid grid-cols-1 gap-8 lg:grid-cols-2">
-    <!-- Left Features Card -->
-    <div
-      class="flex flex-col gap-y-8 rounded-3xl bg-zinc-900 p-8 text-white/90 sm:p-10"
-    >
-      {
-        featuresLeft.map((feature) => (
-          <div class="flex items-start gap-x-5">
-            <div class="flex-shrink-0">
-              <Icon name={feature.icon} class="h-7 w-7" />
-            </div>
-            <p class="leading-relaxed font-bold tracking-wider uppercase">
-              {feature.text}
-            </p>
-          </div>
-        ))
-      }
+<Card variant="light" id="pillars">
+  <div class="py-10">
+    <!-- Header -->
+    <div>
+      <h2 class="text-ink text-3xl font-extrabold tracking-tight sm:text-5xl">
+        THE THREE PILLARS
+      </h2>
+      <p class="text-ink-2 mt-4 max-w-3xl text-lg">
+        Excellence. Confidence. Attractiveness. These aren't goals—they're the foundation of transformation.
+      </p>
     </div>
 
-    <!-- Right Features Card -->
-    <div
-      class="flex flex-col gap-y-8 rounded-3xl bg-zinc-900 p-8 text-white/90 sm:p-10"
-    >
+    <!-- Pillar Cards -->
+    <div class="mt-20 grid grid-cols-1 gap-8 lg:grid-cols-3">
       {
-        featuresRight.map((feature) => (
-          <div class="flex items-start gap-x-5">
-            <div class="flex-shrink-0">
-              <Icon name={feature.icon} class="h-7 w-7" />
+        pillars.map((pillar) => (
+          <div class="bg-surface-dark text-ink-dark flex flex-col rounded-3xl p-8 sm:p-10">
+            <!-- Title -->
+            <h3 class="text-2xl font-bold tracking-tight mb-3 uppercase">
+              {pillar.title}
+            </h3>
+            
+            <!-- Subtitle -->
+            <p class="text-zinc-400 text-sm leading-relaxed mb-8 italic">
+              {pillar.subtitle}
+            </p>
+
+            <!-- Benefits -->
+            <div class="flex-1 space-y-4 mb-8">
+              {pillar.benefits.map((benefit) => (
+                <div class="flex items-start gap-x-3">
+                  <span class="text-brand text-xl mt-0.5">●</span>
+                  <p class="text-sm leading-relaxed">
+                    {benefit}
+                  </p>
+                </div>
+              ))}
             </div>
-            <p class="leading-relaxed font-bold tracking-wider uppercase">
-              {feature.text}
+
+            <!-- Footer -->
+            <p class="text-sm leading-relaxed font-semibold border-t border-zinc-800 pt-6">
+              {pillar.footer}
             </p>
           </div>
         ))

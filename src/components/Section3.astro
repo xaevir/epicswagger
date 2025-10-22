@@ -7,15 +7,16 @@ import afterImg from "../assets/t000-male-35y-weight-loss-after.jpg";
 const PORTRAIT_SIZES =
   "(min-width:1024px) 256px, (min-width:768px) 224px, (min-width:640px) 192px, 160px";
 
-// Lean set: exact 1× widths + 2× picks (all ≤ your 768px original)
 const PORTRAIT_WIDTHS = [160, 192, 224, 256, 320, 512];
 ---
 
-<Card variant="dark" title="The Science">
+<Card variant="dark" title="The Science" id="science">
   <!-- Content Grid -->
   <div class="grid items-center gap-10 md:grid-cols-2">
-    <!-- Images Card -->
-    <div class="mb-20 flex flex-col items-center rounded-xl bg-white p-8">
+    <!-- Images Panel: light card inside dark section -->
+    <div
+      class="bg-surface text-ink border-divider mb-20 flex flex-col items-center rounded-xl border p-8"
+    >
       <div class="flex gap-4">
         <!-- BEFORE -->
         <figure class="flex flex-col items-center">
@@ -27,9 +28,7 @@ const PORTRAIT_WIDTHS = [160, 192, 224, 256, 320, 512];
             class="h-auto w-40 rounded-md sm:w-48 md:w-56 lg:w-64"
             loading="lazy"
           />
-          <figcaption
-            class="font-semibold tracking-wide text-black/80 uppercase"
-          >
+          <figcaption class="text-ink/80 font-semibold tracking-wide uppercase">
             Before
           </figcaption>
         </figure>
@@ -38,49 +37,50 @@ const PORTRAIT_WIDTHS = [160, 192, 224, 256, 320, 512];
         <figure class="flex flex-col items-center">
           <Image
             src={afterImg}
-            alt="Before — week 0"
+            alt="After — week 12"
             sizes={PORTRAIT_SIZES}
             widths={PORTRAIT_WIDTHS}
             class="h-auto w-40 rounded-md sm:w-48 md:w-56 lg:w-64"
             loading="lazy"
           />
-          <figcaption
-            class="font-semibold tracking-wide text-black/80 uppercase"
-          >
+          <figcaption class="text-ink/80 font-semibold tracking-wide uppercase">
             After
           </figcaption>
         </figure>
       </div>
 
-      <p class="mt-6 max-w-xs text-center text-xs text-neutral-500">
+      <p class="text-ink-2 mt-6 max-w-xs text-center text-xs">
         Results may vary depending on your condition, starting weight, and
         commitment to the program.
       </p>
     </div>
 
-    <!-- Text Content -->
+    <!-- Text Content (inherits text-ink-dark from Card[variant='dark']) -->
     <div>
-      <h2
-        class="mb-4 text-3xl leading-tight font-extrabold text-white md:text-4xl"
-      >
-        AESTHETIC OPTIMIZATION
+      <h2 class="mb-4 text-3xl leading-tight font-extrabold md:text-4xl">
+        ELITE IMAGE ENGINEERING
       </h2>
-      <h3 class="mb-2 text-lg font-bold text-white uppercase">
-        With <span class="text-cyan-400">Proven Scientific Methodology</span>
+
+      <h3 class="mb-2 text-lg font-bold uppercase">
+        With <span class="text-brand">Proven Scientific Methodology</span>
       </h3>
-      <div class="space-y-3 text-base leading-relaxed text-white">
+
+      <div class="mt-6 space-y-3 text-sm leading-relaxed md:mt-8 md:text-base">
         <p>
-          You could get fit for free. Information isn’t the problem. You’ve
-          tried it on your own for years.
+          You were born to be attractive and deserve nothing less than to feel
+          that way always.
         </p>
         <p>
-          But you’re too busy making money and providing a great life for your
-          family. Doing this on your own isn’t working.
+          Our goal is to make you look and feel like you are in your prime
+          again. But let's face it what you’ve been doing, as hard as you may
+          have have tried, isn’t working.
         </p>
         <p>
-          And every time you go on vacation, you’re still embarrassed to take
-          your shirt off. Our method guarantees that problem will be eliminated
-          forever.
+          You think you don’t have the time, the knowledge or the wherewithal to
+          get there again and you’re just a little uncomfortable when it comes
+          time to take your shirt off or throw on that bikini again when you
+          take that first vacation of the year. Well guess what? Those days are
+          over forever!
         </p>
       </div>
     </div>

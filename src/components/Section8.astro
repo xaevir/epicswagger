@@ -1,55 +1,31 @@
 ---
-import { Image } from "astro:assets";
+import MediaRight from "../components/MediaRight.astro";
 import sideEffectsImg from "../assets/side-effects-card.jpg";
 ---
 
-<section class="mb-5 overflow-hidden rounded-2xl bg-[#191a1c] text-white">
-  <div class="relative min-h-[500px] w-full">
-    <Image
-      src={sideEffectsImg}
-      alt="Muscular figure in gym"
-      class="absolute top-0 right-0 z-0 h-full w-full object-cover object-[60%_center] sm:w-[90%] sm:object-[65%_center] md:w-[80%] md:object-[70%_center] lg:w-[60%] lg:object-left"
-      widths={[400, 600, 800, 1058]}
-      sizes="(min-width: 1024px) 60vw, (min-width: 768px) 80vw, (min-width: 640px) 90vw, 100vw"
-      loading="lazy"
-      quality={85}
-    />
+<MediaRight img={sideEffectsImg} alt="Muscular figure in gym">
+  <h2
+    class="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:mb-6 lg:text-5xl"
+  >
+    SIDE EFFECTS
+  </h2>
 
-    <div
-      class="relative z-10 mx-auto h-full w-full max-w-6xl px-4 py-16 sm:px-6"
-    >
-      <div
-        class="flex h-full w-[50%] flex-col justify-center px-6 py-6 lg:px-12 lg:py-12"
-      >
-        <!-- Content -->
-        <div class="">
-          <h2
-            class="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:mb-6 lg:text-5xl"
-          >
-            SIDE EFFECTS
-          </h2>
+  <h5 class="mb-6 font-bold lg:mb-8">
+    OF EPIC SWAGGER MAY INCLUDE SOME OR ALL OF THE FOLLOWING:
+  </h5>
 
-          <h5 class="mb-6 font-bold lg:mb-8">
-            OF EPIC SWAGGER MAY INCLUDE SOME OR ALL OF THE FOLLOWING:
-          </h5>
-
-          <div
-            class="grid grid-cols-2 gap-x-3 gap-y-2 text-xs md:gap-x-6 md:gap-y-3 md:text-sm lg:text-base"
-          >
-            <div class="space-y-2 md:space-y-3">
-              <div class="font-semibold tracking-wider">RESPECT</div>
-              <div class="font-semibold tracking-wider">CONFIDENCE</div>
-              <div class="font-semibold tracking-wider">BETTER SEX</div>
-            </div>
-
-            <div class="space-y-2 md:space-y-3">
-              <div class="font-semibold tracking-wider">VITALITY</div>
-              <div class="font-semibold tracking-wider">INFLUENCE</div>
-              <div class="font-semibold tracking-wider">LONGEVITY</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div
+    class="grid grid-cols-2 gap-x-3 gap-y-2 text-xs md:gap-x-6 md:gap-y-3 md:text-sm lg:text-base"
+  >
+    <div class="space-y-2 md:space-y-3">
+      <div class="font-semibold tracking-wider">RESPECT</div>
+      <div class="font-semibold tracking-wider">VITALITY</div>
+      <div class="font-semibold tracking-wider">TRUST</div>
+    </div>
+    <div class="space-y-2 md:space-y-3">
+      <div class="font-semibold tracking-wider">BETTER HEALTH</div>
+      <div class="font-semibold tracking-wider">BETTER SEX</div>
+      <div class="font-semibold tracking-wider">INFLUENCE</div>
     </div>
   </div>
-</section>
+</MediaRight>

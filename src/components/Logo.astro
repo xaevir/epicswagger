@@ -1,47 +1,45 @@
 ---
-// src/components/Logo.astro
-
-// Import the raw SVG code from your prepared icon file
-//import iconSvg from "../assets/flex.svg?raw";
+export interface Props {
+  class?: string;
+}
+const { class: cls = "" } = Astro.props;
 ---
 
-<!-- 
-  This anchor tag is the container for your logo.
-  - `flex items-center` vertically aligns the text and icon.
-  - `gap-x-2.5` adds a bit of space between the elements.
-  - `text-white` sets the color for BOTH the text and the SVG icon (because of `currentColor`).
--->
 <a
   href="/"
-  class="logo-container flex items-center font-bold tracking-widest text-white uppercase"
+  aria-label="Epic Swagger — home"
+  class={`logo-container flex items-center gap-2 leading-none font-bold uppercase tracking-widest ${cls}`}
 >
-  <!-- The word "EPIC" -->
-  <span class="font-new-science text-xl">EPIC</span>
+  <!-- Text inherits color from parent (currentColor) -->
+  <span class="font-new-science text-xl md:text-2xl">EPIC</span>
 
-  <!-- The icon is injected directly into the HTML -->
-  <span class="text-2xl">
+  <!-- Icon uses currentColor so it flips light/dark with nav -->
+  <span class="text-2xl md:text-3xl">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 52.28 62.6"
       width="1em"
       height="1em"
       fill="currentColor"
-      ><path
-        d="M24.21,62.6S.48,56.73,1.54,18.83c-.35-2.42,1.63-7.08,5.93-5.49,16.39,4.36,33.18,17.07,33.18,17.07l-.49-11.09-5.86.64-.82-5.96,7.69,1.48,9.97,24.67s-9.34,3.56-16.28-3.72c-6.94-7.28-24.57,11.1-10.63,26.17Z"
-      ></path><path
-        d="M33.8,11.15c-2.03,3.23-8.62,7.79-11.38,6.52s-3.4-10.59-1.37-13.82S27.58-.37,31.1,1.65s4.73,6.27,2.69,9.51Z"
-      ></path></svg
+      aria-hidden="true"
     >
+      <path
+        d="M24.21,62.6S.48,56.73,1.54,18.83c-.35-2.42,1.63-7.08,5.93-5.49,16.39,4.36,33.18,17.07,33.18,17.07l-.49-11.09-5.86.64-.82-5.96,7.69,1.48,9.97,24.67s-9.34,3.56-16.28-3.72c-6.94-7.28-24.57,11.1-10.63,26.17Z"
+      ></path>
+      <path
+        d="M33.8,11.15c-2.03,3.23-8.62,7.79-11.38,6.52s-3.4-10.59-1.37-13.82S27.58-.37,31.1,1.65s4.73,6.27,2.69,9.51Z"
+      ></path>
+    </svg>
   </span>
 
-  <!-- The word "SWAGGER" -->
-  <span class="font-new-science text-xl">SWAGGER</span>
+  <span class="font-new-science text-xl md:text-2xl">SWAGGER</span>
 
   <style>
-    /* This ensures the injected SVG scales properly */
+    /* Keep the SVG square and tied to the text size */
     .logo-container svg {
-      height: 100%;
-      width: 100%;
+      width: 1em;
+      height: 1em;
+      display: block;
     }
   </style>
 </a>

@@ -1,0 +1,30 @@
+---
+// SectionImage.astro (only change is how style is applied)
+export interface Props {
+  variant?: "light" | "dark";
+  class?: string;
+  minHeight?: string; // optional
+  innerClass?: string;
+}
+const {
+  variant = "light",
+  class: cls = "",
+  minHeight,
+  innerClass = "",
+} = Astro.props;
+---
+
+<section
+  class={`mb-5 overflow-hidden rounded-2xl ${variant === "light" ? "bg-surface text-ink" : "bg-surface-dark text-ink-dark"} ${cls}`}
+  data-bg={variant}
+>
+  <div
+    class="relative"
+    style={minHeight ? `min-height:${minHeight}` : undefined}
+  >
+    <slot name="background" />
+    <div class={`relative z-10 mx-auto h-full w-full max-w-6xl ${innerClass}`}>
+      <slot />
+    </div>
+  </div>
+</section>

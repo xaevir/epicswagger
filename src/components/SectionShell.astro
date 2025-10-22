@@ -1,0 +1,19 @@
+---
+// src/components/SectionShell.astro
+// Props
+export interface Props {
+  variant?: "light" | "dark";
+  class?: string;
+}
+const { variant = "light", class: cls = "" } = Astro.props;
+
+const tone =
+  variant === "light"
+    ? "bg-surface text-ink border border-divider"
+    : "bg-surface-dark text-ink-dark";
+---
+<section class={`mb-5 rounded-2xl ${tone} ${cls}`} data-bg={variant}>
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <slot />
+  </div>
+</section>

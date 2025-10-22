@@ -1,19 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans:
-    var(--font-inter), "Inter", "arial", "ui-sans-serif", "system-ui",
-    "sans-serif";
+  /* fonts (you already had these) */
+  --font-inter:
+    var(--font-inter), "Inter", arial, ui-sans-serif, system-ui, sans-serif;
   --font-brand: var(--font-outfit), sans-serif;
-
   --font-new-science: "new-science", sans-serif;
-  --font-optima: "optima-lt-pro", sans-serif;
+  --font-optima: "optima-nova-lt-pro", sans-serif;
 
-  --color-pale-azure: #61d6ff;
+  /* accent */
+  --color-brand: #38bdf8; /* primary accent */
+  --color-brand-100: #61d6ff; /* light tint / hover */
+
+  /* === semantic neutrals (this gives you bg-*, text-*, border-* classes) === */
+  --color-surface: #fafcfc; /* light card bg (Suprahuman-ish) */
+  --color-surface-dark: #191a1c; /* your dark bg (keep for PS blends) */
+
+  --color-ink: #0a0a0a; /* primary text on light ≈ zinc-900 */
+  --color-ink-2: #3f3f46; /* secondary on light ≈ zinc-700 */
+  --color-ink-3: #52525b; /* ≈ zinc-600, tertiary/muted */
+  --color-ink-dark: #e5e7eb; /* primary text on dark ≈ zinc-200 */
+
+  --color-divider: #e4e4e7; /* borders on light ≈ zinc-200 */
+  --color-divider-dark: #27272a; /* ≈ zinc-800 for subtle borders on dark tiles */
 }
 
 @layer base {
-  /* Make all headings use the brand font */
+  /* headings use brand font */
   h1,
   h2,
   h3,
@@ -22,7 +35,9 @@
   h6 {
     @apply font-brand;
   }
-  p {
+
+  /* body copy default */
+  body {
     @apply font-optima;
   }
 }

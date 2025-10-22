@@ -1,20 +1,34 @@
 ---
-import Card from "../components/Card.astro";
+// src/cards/Card2.astro
+import SectionShell from "../components/SectionShell.astro";
 ---
 
-<Card variant="light" title="Who is Epic Swagger?">
-  <h2
-    slot="header"
-    class="font-brand mb-6 text-sm font-bold tracking-wider uppercase"
-  >
-    Who is Epic Swagger?
+<SectionShell variant="light">
+  <!-- Header (simple variation, no rule) -->
+  <h2 class="font-brand mb-6 text-sm font-bold tracking-wider uppercase">
+    Who is epic swagger?
   </h2>
 
-  <p
-    class="font-new-science max-w-prose py-5 text-3xl font-extralight text-balance uppercase"
+  <!-- Content -->
+  <div
+    class="font-inter max-w-prose py-5 text-3xl font-extralight text-balance"
   >
-    A team of leading fitness coaches, nutrition experts, and medical
-    professionals focusED on AESTHETIC optimization, maximum HUMAN performance,
-    AND INCREASING Health span.
-  </p>
-</Card>
+    <p class="mb-4 text-sm md:text-base">
+      An alliance of elite coaches specializing in fitness, nutrition, and
+      mindset who are experts in aesthetic optimization and performance
+      transformation. Our mission? To instill the principles of discipline and
+      excellence that builds unshakable confidence and magnetic attractiveness
+      in every area of your life.
+    </p>
+
+    <p class="mb-4 text-sm md:text-base">
+      We help you develop an unshakable presence rooted in self-belief, purpose,
+      and authenticity. It's the quiet confidence that comes from doing the
+      work, knowing who you are, and walking into every room with alignment,
+      intention, and impact. It's not arrogance, it's assurance. It's not
+      vanity, it's vitality. It's not loud, it's locked in. Swagger is when your
+      energy speaks before you do, and your actions echo long after you leave
+      the room.
+    </p>
+  </div>
+</SectionShell>

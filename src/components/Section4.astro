@@ -17,66 +17,56 @@ const features = [
   <div
     class="grid grid-cols-1 items-center gap-x-6 gap-y-10 lg:grid-cols-[1fr_2fr]"
   >
-    <!-- Left Column: All the text content -->
+    <!-- Left Column: text -->
     <div>
       <h2
-        class="font-brand mt-8 text-4xl font-semibold tracking-tight text-gray-900 uppercase"
+        class="font-brand mt-8 text-4xl font-semibold tracking-tight uppercase"
       >
-        World Class Coaches
+        We don’t aim for average.
       </h2>
 
-      <!-- Description Paragraphs -->
-      <p class="mt-6 leading-7 text-gray-800">
-        Elite competitors have a dedicated support system for success.
+      <p class="text-ink-2 mt-6 leading-7">We’re engineered for excellence.</p>
+      <p class="text-ink-2 mt-4 leading-7">
+        95% of people who lose weight gain it all back
       </p>
-      <p class="mt-4 leading-7 text-gray-800">
-        Supra Human masters have Ph.Ds, masters degrees, decades of experience,
-        and are dual credentialed with CSCS & PN1.
+      <p class="text-ink-2 mt-4 leading-7">
+        Because they stop when the number on the line.
       </p>
-
-      <!-- 
-        Features List with Icons using `astro-icon` 
-      -->
-      <ul class="mt-10 space-y-5 text-gray-800">
+      <p class="text-ink-2 mt-4 leading-7">We don’t stop there.</p>
+      <p class="text-ink-2 mt-4 leading-7">
+        We hardwire the habits, mindset, and environment it takes to never go
+        back.
+      </p>
+      <!-- Features -->
+      <ul class="mt-10 space-y-5">
         {
-          features.map((feature) => (
-            <li class="flex items-start">
-              <Icon
-                name={feature.icon}
-                class="h-6 w-6 flex-shrink-0 text-gray-700"
-              />
-              <span class="ml-4 font-semibold">{feature.name}</span>
+          features.map((f) => (
+            <li class="text-ink flex items-start">
+              <Icon name={f.icon} class="text-brand h-6 w-6 shrink-0" />
+              <span class="ml-4 font-semibold">{f.name}</span>
             </li>
           ))
         }
       </ul>
     </div>
 
-    <!-- Right Column: Image with "CERTIFIED" overlay -->
-    <!-- `relative` is crucial for positioning the text overlay -->
+    <!-- Right Column: image w/ overlay -->
     <div class="relative">
       <Image
         src={Coaches}
         alt="A collage showcasing the certified, world-class fitness coaches"
         class="h-auto w-full rounded-2xl shadow-xl"
+        widths={[640, 768, 1152, 1600]}
+        sizes="(min-width: 1152px) 768px, (min-width: 1024px) 66vw, 100vw"
         loading="lazy"
-        widths={[400, 800, 1200, 1600]}
-        sizes="(min-width: 1024px) 66vw, 100vw"
+        quality="mid"
       />
 
-      <!-- We will do this after we get the image proper
-        The "CERTIFIED" Overlay Text 
-        - `absolute`: Positions it on top of the image (its nearest `relative` parent).
-        - `inset-0`: Stretches it to cover the entire parent.
-        - `flex items-end justify-center`: A modern way to push content to the bottom-center.
-        - `backdrop-blur` + `bg-black/20`: Creates the glassmorphism effect.
-      -->
+      <!-- 'CERTIFIED' badge -->
       <div class="absolute inset-0 flex items-end justify-center pb-6">
-        <div
-          class="rounded-lg bg-black/30 px-6 py-2 whitespace-nowrap backdrop-blur-sm"
-        >
+        <div class="rounded-lg bg-black/30 px-6 py-2 backdrop-blur-sm">
           <p
-            class="text-4xl font-black tracking-widest text-white uppercase sm:text-5xl"
+            class="text-4xl font-black tracking-widest whitespace-nowrap text-white uppercase sm:text-5xl"
           >
             Certified
           </p>
