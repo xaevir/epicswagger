@@ -1,34 +1,44 @@
----
-// src/cards/Card2.astro
-import SectionShell from "../components/SectionShell.astro";
----
+<section class="bg-zinc-50 px-4 py-16">
+  <div class="mx-auto max-w-6xl">
+    <!-- First Section: Who We Are -->
+    <h2
+      class="font-brand mb-8 text-center text-sm font-bold tracking-wider uppercase"
+    >
+      Who we are?
+    </h2>
 
-<SectionShell variant="light">
-  <!-- Header (simple variation, no rule) -->
-  <h2 class="font-brand mb-6 text-sm font-bold tracking-wider uppercase">
-    Who is epic swagger?
-  </h2>
+    <div
+      class="font-inter mx-auto max-w-4xl text-lg leading-relaxed font-light"
+    >
+      <p class="mb-12 text-center">
+        <span class="text-2xl font-medium">An alliance of elite coaches</span> specializing
+        in fitness, nutrition, and mindset who are experts in aesthetic optimization
+        and performance transformation. Our mission? To instill the principles of
+        discipline and excellence that builds unshakable confidence and magnetic
+        attractiveness in every area of your life.
+      </p>
+    </div>
 
-  <!-- Content -->
-  <div
-    class="font-inter max-w-prose py-5 text-3xl font-extralight text-balance"
-  >
-    <p class="mb-4 text-sm md:text-base">
-      An alliance of elite coaches specializing in fitness, nutrition, and
-      mindset who are experts in aesthetic optimization and performance
-      transformation. Our mission? To instill the principles of discipline and
-      excellence that builds unshakable confidence and magnetic attractiveness
-      in every area of your life.
-    </p>
+    <!-- Second Section: What is Swagger -->
+    <h2
+      class="font-brand mt-16 mb-8 text-center text-sm font-bold tracking-wider uppercase"
+    >
+      What is Swagger?
+    </h2>
 
-    <p class="mb-4 text-sm md:text-base">
-      We help you develop an unshakable presence rooted in self-belief, purpose,
-      and authenticity. It's the quiet confidence that comes from doing the
-      work, knowing who you are, and walking into every room with alignment,
-      intention, and impact. It's not arrogance, it's assurance. It's not
-      vanity, it's vitality. It's not loud, it's locked in. Swagger is when your
-      energy speaks before you do, and your actions echo long after you leave
-      the room.
-    </p>
+    <div
+      class="font-inter mx-auto max-w-4xl text-lg leading-relaxed font-light"
+    >
+      <p class="text-center">
+        We help you develop an unshakable presence rooted in self-belief,
+        purpose, and authenticity. It's the quiet confidence that comes from
+        doing the work, knowing who you are, and walking into every room with
+        alignment, intention, and impact. It's not arrogance, it's assurance.
+        It's not vanity, it's vitality. It's not loud, it's locked in.
+        <strong class="font-bold text-black"
+          >Swagger is when your energy speaks before you do</strong
+        >, and your actions echo long after you leave the room.
+      </p>
+    </div>
   </div>
-</SectionShell>
+</section>

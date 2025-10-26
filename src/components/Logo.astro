@@ -8,10 +8,9 @@ const { class: cls = "" } = Astro.props;
 <a
   href="/"
   aria-label="Epic Swagger — home"
-  class={`logo-container flex items-center gap-2 leading-none font-bold uppercase tracking-widest ${cls}`}
+  class={`logo-container flex items-center gap-0 leading-none ${cls}`}
 >
   <!-- Text inherits color from parent (currentColor) -->
-  <span class="font-new-science text-xl md:text-2xl">EPIC</span>
 
   <!-- Icon uses currentColor so it flips light/dark with nav -->
   <span class="text-2xl md:text-3xl">
@@ -31,8 +30,7 @@ const { class: cls = "" } = Astro.props;
       ></path>
     </svg>
   </span>
-
-  <span class="font-new-science text-xl md:text-2xl">SWAGGER</span>
+  <span class="font-inter text-sm font-black md:text-lg">EPIC SWAGGER</span>
 
   <style>
     /* Keep the SVG square and tied to the text size */
